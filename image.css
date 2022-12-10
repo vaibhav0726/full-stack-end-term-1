@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+p{
+    font-size: 25px;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+}
+body
+{
+    width: 40%;
+    margin: auto;
+    background: linear-gradient(to right,rgb(212, 27, 27),rgb(0, 90, 226));
+}
+.flipgame{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,rgb(5, 247, 37),rgb(143, 17, 105));
+}
+img{
+    width: 100px;
+}
+.flipgame{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid lightgrey;
+    width: 640px;
+    height: 640px;
+    perspective: 1000px;
+}
+
+.card{
+    width: 25%;
+    height: 33.33%;
+    position: relative;
+    border: 2px solid rgb(0, 0, 0);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active{
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.frontface{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(36, 34, 34);
+    backface-visibility: hidden;
+}
+.frontface{
+    transform: rotateY(180deg);
+}
+/* //utility class */
+.card.flip{
+    transform: rotateY(180deg);
+}
